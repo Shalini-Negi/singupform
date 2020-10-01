@@ -28,8 +28,8 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `registration` (
-  `id` int(11) NOT NULL,
-  `username` varchar(255) NOT NULL,
+  `id` int(11) primary key, --added primary key here.
+  `username` varchar(255) unique,--added unique so that no person with same name can register
   `password` int(20) NOT NULL,
   `email` varchar(255) NOT NULL,
   `dob` text NOT NULL,
@@ -52,8 +52,7 @@ INSERT INTO `registration` (`id`, `username`, `password`, `email`, `dob`, `gende
 --
 -- Indexes for table `registration`
 --
-ALTER TABLE `registration`
-  ADD PRIMARY KEY (`id`);
+
 
 --
 -- AUTO_INCREMENT for dumped tables
